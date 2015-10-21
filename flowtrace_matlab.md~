@@ -1,0 +1,20 @@
+# flowtrace for MATLAB
+
+Implementation of the flowtrace tool as a function file in MATLAB
+This was developed and tested primarily on R2014a, but it has no special dependencies on particular toolboxes. Future versions might require the Image Processing Toolbox
+
+## Installation
+
+Download the function file `flowtrace.m` from the host repository on GitHub. Or on OSX/Linux run in your MATLAB root directory
+
+	 curl -OS https://raw.githubusercontent.com/williamgilpin/flowtrace_matlab/master/flowtrace.m
+
+## Running flowtrace
+
+You can download the test image files for flowtrace and place them in a folder "test_images" somewhere on your MATLAB path. See if the tool is working by running a 5 frame projection
+
+    >> flowtrace('path/to/test',30)
+
+
+
+

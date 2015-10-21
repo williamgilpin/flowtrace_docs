@@ -22,9 +22,6 @@
                 </small>
             </a>
 
-                            <a href="https://github.com/williamgilpin/flowtrace_docs">
-                    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
-                </a>
             
         </header>
 
@@ -33,7 +30,43 @@
 
                 
                 <section id="content" class="col-sm-12">
-                    <h1 id="flowtrace-for-matlab">Flowtrace for MATLAB</h1>
+                    <h1 id="flowtrace-for-matlab">flowtrace for MATLAB</h1>
+<p>Implementation of the flowtrace tool as a function file in MATLAB
+This was developed and tested primarily on R2014a, but it has no special dependencies on particular toolboxes. Future versions might require the Image Processing Toolbox</p>
+<p>William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015</p>
+<h2 id="installation">Installation</h2>
+<p>Use your browser to download flowtrace for MATLAB from <a href="https://github.com/williamgilpin/flowtrace_matlab">the host repository on GitHub</a> and put it somehwere on your MATLAB path. On OSX/Linux, you can initiate the download from the terminal using</p>
+<pre><code>curl -OS https://github.com/williamgilpin/pypdb/archive/master.zip</code></pre>
+<p>Or, using git</p>
+<pre><code>git clone https://github.com/williamgilpin/pypdb.git</code></pre>
+<h2 id="running-flowtrace">Running flowtrace</h2>
+<p>You can download the test image files for flowtrace and place them in a folder &quot;test_images&quot; somewhere on your MATLAB path. See if the tool is working by running it on the test data included in the file</p>
+<pre><code>&gt;&gt; test_script</code></pre>
+<p>You should see fresh image files in the directory <code>sample_output</code></p>
+<p>In general, the command to run flowtrace is</p>
+<pre><code>&gt;&gt; flowtrace('some/input/data',30,'some/output/older/')</code></pre>
+<p>In order to use custom parameters, pass a struct() to the function</p>
+<pre><code>&gt;&gt; params=struct()
+&gt;&gt; params.subtract_median=true
+&gt;&gt; flowtrace('sample_data',30,'sample_output',params)</code></pre>
+<h2 id="options">Options</h2>
+<p>Options are passed as fields in a <code>struct()</code>. This struct can be called anything,
+but we'll call it <code>params</code> here.</p>
+<pre><code>&gt;&gt; params = struct()</code></pre>
+<p>The various options are:</p>
+<p>Subtract the median of each stack of frames before projecting</p>
+<pre><code>params.subtract_median=false</code></pre>
+<p>Subtract the first frame of each stack of frames before projecting</p>
+<pre><code>params.subtract_first=false</code></pre>
+<p>Take the minimum intensity projection then invert the color. Useful for images of dark particles on a light background</p>
+<pre><code>params.invert_color=false</code></pre>
+<p>Take the pairwise difference between all of the images in the time series.</p>
+<pre><code>params.take_diff=false</code></pre>
+<h2 id="future">Future</h2>
+<ul>
+<li>Support for color images</li>
+</ul>
+<p>Bug reports and pull requests are encouraged.</p>
                 </section>
 
             </div>
