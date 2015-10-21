@@ -20,10 +20,72 @@ Somewhere in your script, include the import statement
 
 	>> from flowtrace import flowtrace
 
-## Options
+Run using all defaults and a 30 frame projection window
+
+	>> flowtrace('sample_data',30,'sample_output/')
+
+Subtract the median of every 30 frames to remove slow-moving background objects
+
+	>> flowtrace('sample_data',30,'sample_output/',subtract_median=True)
+
+Color the output streamlines to denote the direction of time
+
+	>> flowtrace('sample_data',30,'sample_output/',color_series=True)
+
+Adjust the number of cores that the code uses to multithread
+
+	>> flowtrace('sample_data',30,'sample_output/',max_cores=2)
 
 
 
+## API and Options
+
+### Arguments
+
+imagedir : str
++ path to directory containing raw image files
+        
+frames_to_merge : int
++ The numbe of frames to merge to form a single streamline image
+    
+out_dir : str
++ path to directory where streamline files are saved
+        
+max_cores : int
++ With multi-threading enabled, the maximum number of simultaneous jobs to run. 
++ When running this, it's useful to calculate the total RAM available versus that required to completely hold an image stack of length frames_to_merge, since parallelization is not useful if there's not enough RAM for each core to complete a task
+
+frames_to_skip : int
++ The number of images to skip when building each substack
+
+### Keywords
+
+take_diff : bool
++ whether to take the difference of consecutive frames
+    
+diff_order : int
++ the order of the difference in frames when take_diff is used
+
+subtract_median : bool
++ For each substack, subtract the median before taking the z projection
+
+subtract_first : bool
++ For each substack, subtract the first frame before taking the z projection
+
+add_first_frame : bool
++ Add the unaltered first frame of the stack back to the stack before taking z projection. Makes it possible to view sharp structures in median transformed data
+
+color_series : bool
++ Color the time traces
+
+
+## Debugging
+
+If you are consistently getting errors, try disabling various features. `use_parallel=False`
+
+	>> flowtrace('sample_data',30,'sample_output/', use_parallel=False)
+
+Certain combinations of keyword arguments might cause errors--for example, using median subtraction and inverting the color simultaneously might yeild unpredictable results on color images.
 
 ## Future
 

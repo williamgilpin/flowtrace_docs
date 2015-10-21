@@ -6,16 +6,16 @@
 
         <title>flowtrace</title>
 
-        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/font-awesome.min.css">
-        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/highlight.dark.css">
-        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/main.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/highlight.dark.css">
+        <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="http://williamgilpin.github.io/flowtrace_docs/">
+            <a class="navbar-brand" href="/">
                 flowtrace
                 <small class="hidden-xs hidden-sm">
                     A simple tool for visualizing fluid flows
@@ -41,7 +41,66 @@
 <h2 id="running-flowtrace">Running flowtrace</h2>
 <p>Somewhere in your script, include the import statement</p>
 <pre><code>&gt;&gt; from flowtrace import flowtrace</code></pre>
-<h2 id="options">Options</h2>
+<p>Run using all defaults and a 30 frame projection window</p>
+<pre><code>&gt;&gt; flowtrace('sample_data',30,'sample_output/')</code></pre>
+<p>Subtract the median of every 30 frames to remove slow-moving background objects</p>
+<pre><code>&gt;&gt; flowtrace('sample_data',30,'sample_output/',subtract_median=True)</code></pre>
+<p>Color the output streamlines to denote the direction of time</p>
+<pre><code>&gt;&gt; flowtrace('sample_data',30,'sample_output/',color_series=True)</code></pre>
+<p>Adjust the number of cores that the code uses to multithread</p>
+<pre><code>&gt;&gt; flowtrace('sample_data',30,'sample_output/',max_cores=2)</code></pre>
+<h2 id="api-and-options">API and Options</h2>
+<h3 id="arguments">Arguments</h3>
+<p>imagedir : str</p>
+<ul>
+<li>path to directory containing raw image files</li>
+</ul>
+<p>frames_to_merge : int</p>
+<ul>
+<li>The numbe of frames to merge to form a single streamline image</li>
+</ul>
+<p>out_dir : str</p>
+<ul>
+<li>path to directory where streamline files are saved</li>
+</ul>
+<p>max_cores : int</p>
+<ul>
+<li>With multi-threading enabled, the maximum number of simultaneous jobs to run. </li>
+<li>When running this, it's useful to calculate the total RAM available versus that required to completely hold an image stack of length frames_to_merge, since parallelization is not useful if there's not enough RAM for each core to complete a task</li>
+</ul>
+<p>frames_to_skip : int</p>
+<ul>
+<li>The number of images to skip when building each substack</li>
+</ul>
+<h3 id="keywords">Keywords</h3>
+<p>take_diff : bool</p>
+<ul>
+<li>whether to take the difference of consecutive frames</li>
+</ul>
+<p>diff_order : int</p>
+<ul>
+<li>the order of the difference in frames when take_diff is used</li>
+</ul>
+<p>subtract_median : bool</p>
+<ul>
+<li>For each substack, subtract the median before taking the z projection</li>
+</ul>
+<p>subtract_first : bool</p>
+<ul>
+<li>For each substack, subtract the first frame before taking the z projection</li>
+</ul>
+<p>add_first_frame : bool</p>
+<ul>
+<li>Add the unaltered first frame of the stack back to the stack before taking z projection. Makes it possible to view sharp structures in median transformed data</li>
+</ul>
+<p>color_series : bool</p>
+<ul>
+<li>Color the time traces</li>
+</ul>
+<h2 id="debugging">Debugging</h2>
+<p>If you are consistently getting errors, try disabling various features. <code>use_parallel=False</code></p>
+<pre><code>&gt;&gt; flowtrace('sample_data',30,'sample_output/', use_parallel=False)</code></pre>
+<p>Certain combinations of keyword arguments might cause errors--for example, using median subtraction and inverting the color simultaneously might yeild unpredictable results on color images.</p>
 <h2 id="future">Future</h2>
 <p>Bug reports and pull requests are encouraged.</p>
                 </section>
