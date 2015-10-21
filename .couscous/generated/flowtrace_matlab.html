@@ -31,14 +31,14 @@
                 
                 <section id="content" class="col-sm-12">
                     <h1 id="flowtrace-for-matlab">flowtrace for MATLAB</h1>
-<p>Implementation of the flowtrace tool as a function file in MATLAB
-This was developed and tested primarily on R2014a, but it has no special dependencies on particular toolboxes. Future versions might require the Image Processing Toolbox</p>
+<p>Implementation of the flowtrace tool as a function file in MATLAB.</p>
+<p>This was developed and tested primarily on R2014a, but it has no special dependencies on particular toolboxes. Future versions might require the Image Processing Toolbox</p>
 <p>William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015</p>
 <h2 id="installation">Installation</h2>
 <p>Use your browser to download flowtrace for MATLAB from <a href="https://github.com/williamgilpin/flowtrace_matlab">the host repository on GitHub</a> and put it somehwere on your MATLAB path. On OSX/Linux, you can initiate the download from the terminal using</p>
-<pre><code>curl -OS https://github.com/williamgilpin/pypdb/archive/master.zip</code></pre>
+<pre><code>curl -OS https://github.com/williamgilpin/flowtrace_matlab/archive/master.zip</code></pre>
 <p>Or, using git</p>
-<pre><code>git clone https://github.com/williamgilpin/pypdb.git</code></pre>
+<pre><code>git clone https://github.com/williamgilpin/flowtrace_matlab.git</code></pre>
 <h2 id="running-flowtrace">Running flowtrace</h2>
 <p>You can download the test image files for flowtrace and place them in a folder &quot;test_images&quot; somewhere on your MATLAB path. See if the tool is working by running it on the test data included in the file</p>
 <pre><code>&gt;&gt; test_script</code></pre>
@@ -62,10 +62,11 @@ but we'll call it <code>params</code> here.</p>
 <pre><code>params.invert_color=false</code></pre>
 <p>Take the pairwise difference between all of the images in the time series.</p>
 <pre><code>params.take_diff=false</code></pre>
+<p>For each set of frames being merged, apply a gradient of color along the pathlines</p>
+<pre><code>params.color_series=false</code></pre>
+<p>For each set of frames being merged, apply an intensity gradient along the pathlines </p>
+<pre><code>params.fade_tails=false</code></pre>
 <h2 id="future">Future</h2>
-<ul>
-<li>Support for color images</li>
-</ul>
 <p>Bug reports and pull requests are encouraged.</p>
                 </section>
 

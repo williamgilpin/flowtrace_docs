@@ -19,21 +19,22 @@ Or, using git
 	git clone https://github.com/williamgilpin/flowtrace_imagej.git
 
 
-
-
 ## Running flowtrace
 
 Open a folder containing an image time series as a stack or virtual stack
+<img src="screenshots/tool.png" width="50%" />
+<!-- ![flowtrace x ImageJ](screenshots/tool.png) -->
 
-![flowtrace ImageJ](/screenshots/tool.png)
 
 In order to run the tool without installing, go to `Plugins > Macros > Run`
 
-![Save Directory](/screenshots/run_macro.png)
+<img src="screenshots/run_macro.png" width="50%" />
+<!-- ![Save Directory](screenshots/run_macro.png) -->
 
 Navigate to the folder into which you downloaded the tool and double click on it. You will be presented with a list of options for running the tool
 
-![Options menu](/screenshots/options.png)
+<img src="screenshots/options.png" width="30%" />
+<!-- ![Options menu](screenshots/options.png) -->
 
 For "Number of frames to merge," select the number of frames that should be used to make each pathline. The larger this number, the longer the resulting pathlines (for best performance, this should be as large as possible while still smaller than the number of frames over which the unsteady flow noticeably changes). 
 
@@ -51,7 +52,8 @@ If you find yourself using flowtrace on a regular basis, you may want to install
 
 When flowtrace is run, you are presented with the following options:
 
-![Options menu](/screenshots/options.png)
+<img src="screenshots/options.png" width="50%" />
+<!-- ![Options menu](screenshots/options.png) -->
 
 + Fade the ends of trails
 
@@ -77,4 +79,10 @@ When flowtrace is run, you are presented with the following options:
 
 + Subtract Median
 
-	+ For each substack for which a pathline will be generated, subtrace out the median of each pixel value. This option is good for eliminating backgound objects (or any objects that move slower than the tracer particles or moving organisms)
+	+ For each substack for which a pathline will be generated, subtract out the median of each pixel value. This option is good for eliminating backgound objects (or any objects that move slower than the tracer particles or moving organisms)
+
+## Future
+
++ Subtract first frame of each series
+
+Bug reports and pull requests are encouraged.

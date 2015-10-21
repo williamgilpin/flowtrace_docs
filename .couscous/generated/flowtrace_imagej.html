@@ -30,7 +30,81 @@
 
                 
                 <section id="content" class="col-sm-12">
-                    <h1 id="flowtrace-for-imagej">Flowtrace for ImageJ</h1>
+                    <h1 id="flowtrace-for-imagej">flowtrace for ImageJ</h1>
+<p>Implementation of the flowtrace tool as a macro for ImageJ / Fiji</p>
+<p>This has been tested in ImageJ32, ImageJ64, and Fiji.</p>
+<p>William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015</p>
+<h2 id="installation">Installation</h2>
+<p>Download the code and sample images from <a href="https://github.com/williamgilpin/flowtrace_imagej">the GitHub repository</a></p>
+<p>Alternatively, on OSX/Linux you can initiate the download from the terminal using</p>
+<pre><code>curl -OS https://github.com/williamgilpin/flowtrace_imagej/archive/master.zip</code></pre>
+<p>Or, using git</p>
+<pre><code>git clone https://github.com/williamgilpin/flowtrace_imagej.git</code></pre>
+<h2 id="running-flowtrace">Running flowtrace</h2>
+<p>Open a folder containing an image time series as a stack or virtual stack</p>
+<img src="screenshots/tool.png" width="50%" />
+<!-- ![flowtrace x ImageJ](screenshots/tool.png) -->
+<p>In order to run the tool without installing, go to <code>Plugins &gt; Macros &gt; Run</code></p>
+<img src="screenshots/run_macro.png" width="50%" />
+<!-- ![Save Directory](screenshots/run_macro.png) -->
+<p>Navigate to the folder into which you downloaded the tool and double click on it. You will be presented with a list of options for running the tool</p>
+<img src="screenshots/options.png" width="30%" />
+<!-- ![Options menu](screenshots/options.png) -->
+<p>For &quot;Number of frames to merge,&quot; select the number of frames that should be used to make each pathline. The larger this number, the longer the resulting pathlines (for best performance, this should be as large as possible while still smaller than the number of frames over which the unsteady flow noticeably changes). </p>
+<p>The remaining options are described in greater detail below. Click <code>OK</code> to continue. </p>
+<p>Now follow the prompt to choose a directory into which to save the output images. Click <code>OK</code> to run the tool.</p>
+<h2 id="installing-as-a-permanent-macro">Installing as a permanent macro</h2>
+<p>If you find yourself using flowtrace on a regular basis, you may want to install it as a permanent macro in ImageJ or Fiji's plugins menu. The easiest way to do this is to manually drag the file into the folder <code>ImageJ/plugins</code> or <code>Fiji/Plugins</code> (located in the installation directory of Fiji or ImageJ). Restart Fiji or ImageJ after doing this.</p>
+<h2 id="options">Options</h2>
+<p>When flowtrace is run, you are presented with the following options:</p>
+<img src="screenshots/options.png" width="50%" />
+<!-- ![Options menu](screenshots/options.png) -->
+<ul>
+<li>
+<p>Fade the ends of trails</p>
+<ul>
+<li>Linearly dim the pathlines in each image, such that the portion of the pathline that comes from frames further in the past appears dimmer.</li>
+</ul>
+</li>
+<li>
+<p>Invert projections</p>
+<ul>
+<li>If you are using movies of dark objects against a light background (such as bright field microscope images, or a video of an insect flock or swarm), then invert the projection process in order to generate the appropriate pathlines</li>
+</ul>
+</li>
+<li>
+<p>Color Frames</p>
+<ul>
+<li>In each frame of the resulting time series, color-code the pathlines by time. The portion of the streamline that is further in the past will appear more blue, while the more recent frames will be colored redder. The most recent frame is left untinted</li>
+</ul>
+</li>
+<li>
+<p>Frames to skip</p>
+<ul>
+<li>If you don't want to project from every frame in the range of the time series (for example, if you want dotted lines, or if you think your data oversamples in time), then set &quot;Frames to skip&quot; to a number larger than 1. If you are not certain, leave this as 1.</li>
+</ul>
+</li>
+<li>
+<p>Pairwise Difference</p>
+<ul>
+<li>
+<p>Take the pairwise difference between all of the images in the time series.</p>
+</li>
+<li>This works by default in Fiji. In order to make this work in other versions of ImageJ, please install the &quot;Kymograph&quot; plugin from <a href="http://www.embl.de/eamnet/html/kymograph.html">EMBL</a>. That plugin should be attributed to  J. Rietdorf, FMI Basel and A. Seitz, EMBL Heidelberg.</li>
+</ul>
+</li>
+<li>
+<p>Subtract Median</p>
+<ul>
+<li>For each substack for which a pathline will be generated, subtract out the median of each pixel value. This option is good for eliminating backgound objects (or any objects that move slower than the tracer particles or moving organisms)</li>
+</ul>
+</li>
+</ul>
+<h2 id="future">Future</h2>
+<ul>
+<li>Subtract first frame of each series</li>
+</ul>
+<p>Bug reports and pull requests are encouraged.</p>
                 </section>
 
             </div>

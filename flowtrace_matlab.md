@@ -59,10 +59,16 @@ Take the pairwise difference between all of the images in the time series.
 
 	params.take_diff=false
 
+For each set of frames being merged, apply a gradient of color along the pathlines
+
+	params.color_series=false
+
+For each set of frames being merged, apply an intensity gradient along the pathlines 
+
+	params.fade_tails=false
+
 
 ## Future
-
-+ Support for color images
 
 Bug reports and pull requests are encouraged.
 
