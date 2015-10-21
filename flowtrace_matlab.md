@@ -1,6 +1,7 @@
 # flowtrace for MATLAB
 
-Implementation of the flowtrace tool as a function file in MATLAB
+Implementation of the flowtrace tool as a function file in MATLAB.
+
 This was developed and tested primarily on R2014a, but it has no special dependencies on particular toolboxes. Future versions might require the Image Processing Toolbox
 
 William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
@@ -9,11 +10,11 @@ William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
 
 Use your browser to download flowtrace for MATLAB from [the host repository on GitHub](https://github.com/williamgilpin/flowtrace_matlab) and put it somehwere on your MATLAB path. On OSX/Linux, you can initiate the download from the terminal using
 
-	curl -OS https://github.com/williamgilpin/pypdb/archive/master.zip
+	curl -OS https://github.com/williamgilpin/flowtrace_matlab/archive/master.zip
 
 Or, using git
 
-	git clone https://github.com/williamgilpin/pypdb.git
+	git clone https://github.com/williamgilpin/flowtrace_matlab.git
 
 ## Running flowtrace
 

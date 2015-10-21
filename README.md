@@ -1,4 +1,4 @@
-# Flowtrace
+# flowtrace
 
 A simple tool for visualizing unsteady flows
 

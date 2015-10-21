@@ -8,4 +8,4 @@ Flowtrace is currently implemented in Python, MATLAB, and ImageJ, please choose 
 + [Python](flowtrace_python.html)
 + [MATLAB](flowtrace_matlab.html)
 
-William Gilpin, Vivek Prakash, and Manu Prakash, 2015
+William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
