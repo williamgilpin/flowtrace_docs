@@ -1,6 +1,6 @@
 # flowtrace for ImageJ
 
-Implementation of the flowtrace tool as a macro for ImageJ / Fiji
+Implementation of the flowtrace tool as a macro for ImageJ / Fiji. Please make sure that you are running the latest version of [Fiji](http://fiji.sc/Fiji) or [ImageJ](http://imagej.nih.gov/ij/).
 
 This has been tested in ImageJ32, ImageJ64, and Fiji.
 
@@ -45,7 +45,7 @@ Now follow the prompt to choose a directory into which to save the output images
 
 ## Installing as a permanent macro
 
-If you find yourself using flowtrace on a regular basis, you may want to install it as a permanent macro in ImageJ or Fiji's plugins menu. The easiest way to do this is to manually drag the file into the folder `ImageJ/plugins` or `Fiji/Plugins` (located in the installation directory of Fiji or ImageJ). Restart Fiji or ImageJ after doing this.
+If you find yourself using flowtrace on a regular basis, you may want to install it as a permanent macro in ImageJ or Fiji's plugins menu. The easiest way to do this is to manually drag the file into the folder `ImageJ/plugins` or `Fiji/Plugins` (located in the installation directory of Fiji or ImageJ---on OSX you may need to go to `Applications/Fiji`, right-click the icon, and select "Show package contents"). Restart Fiji or ImageJ after adding the file to that folder.
 
 
 ## Options
@@ -74,15 +74,34 @@ When flowtrace is run, you are presented with the following options:
 + Pairwise Difference
 
 	+ Take the pairwise difference between all of the images in the time series.
-
+	+ This is useful for removing very slow-moving particles from the field of view. Use this when "Subtract Median" does not remove artifacts aggressively enough.
 	+ This works by default in Fiji. In order to make this work in other versions of ImageJ, please install the "Kymograph" plugin from [EMBL](http://www.embl.de/eamnet/html/kymograph.html). That plugin should be attributed to  J. Rietdorf, FMI Basel and A. Seitz, EMBL Heidelberg.
 
 + Subtract Median
 
 	+ For each substack for which a pathline will be generated, subtract out the median of each pixel value. This option is good for eliminating backgound objects (or any objects that move slower than the tracer particles or moving organisms)
 
+## Debugging
+
+### "Color Frames" option fails with message `Unrecognized Array function` and `rvals = Array.<getSequence>(nmerge);`
+
+<img src="screenshots/macro_error.png" width="50%" />
+
+Please make sure that you are running the latest version of Fiji or ImageJ.
+
 ## Future
 
-+ Subtract first frame of each series
+<!-- + Subtract first frame of each series
+ -->
+Bug reports and pull requests are encouraged [through GitHub](https://github.com/williamgilpin/flowtrace_imagej)
 
-Bug reports and pull requests are encouraged.
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52823035-4', 'auto');
+  ga('send', 'pageview');
+
+</script>

@@ -2,7 +2,7 @@
 
 Implementation of the flowtrace tool as a function file in MATLAB.
 
-This was developed and tested primarily on R2014a, but it has no special dependencies on particular toolboxes. Future versions might require the Image Processing Toolbox
+This code has been tested on R2013b and later. It has no special dependencies on particular toolboxes. Future versions might require the Image Processing Toolbox
 
 William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
 
@@ -67,12 +67,24 @@ For each set of frames being merged, apply an intensity gradient along the pathl
 
 	params.fade_tails=false
 
+## Debugging
+
+
 
 ## Future
 
 Bug reports and pull requests are encouraged.
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-52823035-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 

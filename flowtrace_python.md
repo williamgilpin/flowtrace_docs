@@ -42,40 +42,40 @@ Adjust the number of cores that the code uses to multithread
 
 ### Arguments
 
-imagedir : str
+**imagedir : str**
 + path to directory containing raw image files
         
-frames_to_merge : int
+**frames_to_merge : int**
 + The numbe of frames to merge to form a single streamline image
     
-out_dir : str
+**out_dir : str**
 + path to directory where streamline files are saved
         
-max_cores : int
+**max_cores : int**
 + With multi-threading enabled, the maximum number of simultaneous jobs to run. 
 + When running this, it's useful to calculate the total RAM available versus that required to completely hold an image stack of length frames_to_merge, since parallelization is not useful if there's not enough RAM for each core to complete a task
 
-frames_to_skip : int
+**frames_to_skip : int**
 + The number of images to skip when building each substack
 
 ### Keywords
 
-take_diff : bool
+**take_diff : bool**
 + whether to take the difference of consecutive frames
     
-diff_order : int
+**diff_order : int**
 + the order of the difference in frames when take_diff is used
 
-subtract_median : bool
+**subtract_median : bool**
 + For each substack, subtract the median before taking the z projection
 
-subtract_first : bool
+**subtract_first : bool**
 + For each substack, subtract the first frame before taking the z projection
 
-add_first_frame : bool
+**add_first_frame : bool**
 + Add the unaltered first frame of the stack back to the stack before taking z projection. Makes it possible to view sharp structures in median transformed data
 
-color_series : bool
+**color_series : bool**
 + Color the time traces
 
 
@@ -89,5 +89,16 @@ Certain combinations of keyword arguments might cause errors--for example, using
 
 ## Future
 
-Bug reports and pull requests are encouraged.
+Bug reports and pull requests are encouraged [through GitHub](https://github.com/williamgilpin/flowtrace_python)
 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52823035-4', 'auto');
+  ga('send', 'pageview');
+
+</script>

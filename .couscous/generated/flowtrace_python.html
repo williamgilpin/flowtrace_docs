@@ -51,49 +51,49 @@
 <pre><code>&gt;&gt; flowtrace('sample_data',30,'sample_output/',max_cores=2)</code></pre>
 <h2 id="api-and-options">API and Options</h2>
 <h3 id="arguments">Arguments</h3>
-<p>imagedir : str</p>
+<p><strong>imagedir : str</strong></p>
 <ul>
 <li>path to directory containing raw image files</li>
 </ul>
-<p>frames_to_merge : int</p>
+<p><strong>frames_to_merge : int</strong></p>
 <ul>
 <li>The numbe of frames to merge to form a single streamline image</li>
 </ul>
-<p>out_dir : str</p>
+<p><strong>out_dir : str</strong></p>
 <ul>
 <li>path to directory where streamline files are saved</li>
 </ul>
-<p>max_cores : int</p>
+<p><strong>max_cores : int</strong></p>
 <ul>
 <li>With multi-threading enabled, the maximum number of simultaneous jobs to run. </li>
 <li>When running this, it's useful to calculate the total RAM available versus that required to completely hold an image stack of length frames_to_merge, since parallelization is not useful if there's not enough RAM for each core to complete a task</li>
 </ul>
-<p>frames_to_skip : int</p>
+<p><strong>frames_to_skip : int</strong></p>
 <ul>
 <li>The number of images to skip when building each substack</li>
 </ul>
 <h3 id="keywords">Keywords</h3>
-<p>take_diff : bool</p>
+<p><strong>take_diff : bool</strong></p>
 <ul>
 <li>whether to take the difference of consecutive frames</li>
 </ul>
-<p>diff_order : int</p>
+<p><strong>diff_order : int</strong></p>
 <ul>
 <li>the order of the difference in frames when take_diff is used</li>
 </ul>
-<p>subtract_median : bool</p>
+<p><strong>subtract_median : bool</strong></p>
 <ul>
 <li>For each substack, subtract the median before taking the z projection</li>
 </ul>
-<p>subtract_first : bool</p>
+<p><strong>subtract_first : bool</strong></p>
 <ul>
 <li>For each substack, subtract the first frame before taking the z projection</li>
 </ul>
-<p>add_first_frame : bool</p>
+<p><strong>add_first_frame : bool</strong></p>
 <ul>
 <li>Add the unaltered first frame of the stack back to the stack before taking z projection. Makes it possible to view sharp structures in median transformed data</li>
 </ul>
-<p>color_series : bool</p>
+<p><strong>color_series : bool</strong></p>
 <ul>
 <li>Color the time traces</li>
 </ul>
@@ -102,7 +102,17 @@
 <pre><code>&gt;&gt; flowtrace('sample_data',30,'sample_output/', use_parallel=False)</code></pre>
 <p>Certain combinations of keyword arguments might cause errors--for example, using median subtraction and inverting the color simultaneously might yeild unpredictable results on color images.</p>
 <h2 id="future">Future</h2>
-<p>Bug reports and pull requests are encouraged.</p>
+<p>Bug reports and pull requests are encouraged <a href="https://github.com/williamgilpin/flowtrace_python">through GitHub</a></p>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52823035-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
                 </section>
 
             </div>
