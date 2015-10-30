@@ -8,7 +8,15 @@ Flowtrace is currently implemented in Python, MATLAB, and ImageJ, please choose 
 + [Python](flowtrace_python.html)
 + [MATLAB](flowtrace_matlab.html)
 
+The [Video Gallery](gallery.html) showcases our favorite videos generated using flowtrace.
+
 William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
+
+<iframe src="https://player.vimeo.com/video/144072652?title=0&byline=0" width="300" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<sub>The result of running Flowtrace with a 333 ms projection window on video of swarming insects. The original video of midges is taken from [Attanasi et al, PLoS Comp Bio, July 2014](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003697)</sub>
+
+
 
 
 <script>

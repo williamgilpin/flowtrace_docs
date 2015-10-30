@@ -81,11 +81,19 @@ Adjust the number of cores that the code uses to multithread
 
 ## Debugging
 
-If you are consistently getting errors, try disabling various features. `use_parallel=False`
+**The code just won't run**
++ If you are consistently getting errors on your system, try disabling parallization with the setting `use_parallel=False`. Multithreading in Python can be configuration-specific, and so flowtrace will not succeed in multithreading if Python's multiprocessing library is not working.
 
-	>> flowtrace('sample_data',30,'sample_output/', use_parallel=False)
+		>> flowtrace('sample_data',30,'sample_output/', use_parallel=False)
 
-Certain combinations of keyword arguments might cause errors--for example, using median subtraction and inverting the color simultaneously might yeild unpredictable results on color images.
++ Certain combinations of keyword arguments might cause errors--for example, using median subtraction and inverting the color simultaneously might yield unpredictable results on color images.
+
+**The code is performing surprisingly slowly**. 
++ If the code seems to be reading very slowly, try using Fiji or ImageJ to open the image sequence as a stack, convert to 8-bit tif (or RGB if using color) and then re-save all the files Even if the raw data is supposedly .tif, sometimes the encoding is funny and so scipy struggles to read the files.
+
+**Attempts to read or write files fail to find the appropriate directory** (Windows only)
++ Make sure you are using the correct format for filepaths on Windows. Instead of `Users/John/pics` use `Users//John//pics` or `Users\John\pics`
+
 
 ## Future
 

@@ -6,16 +6,16 @@
 
         <title>flowtrace</title>
 
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/highlight.dark.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/main.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="http://williamgilpin.github.io/flowtrace_docs/">
                 flowtrace
                 <small class="hidden-xs hidden-sm">
                     A simple tool for visualizing fluid flows
@@ -98,9 +98,22 @@
 <li>Color the time traces</li>
 </ul>
 <h2 id="debugging">Debugging</h2>
-<p>If you are consistently getting errors, try disabling various features. <code>use_parallel=False</code></p>
+<p><strong>The code just won't run</strong></p>
+<ul>
+<li>
+<p>If you are consistently getting errors on your system, try disabling parallization with the setting <code>use_parallel=False</code>. Multithreading in Python can be configuration-specific, and so flowtrace will not succeed in multithreading if Python's multiprocessing library is not working.</p>
 <pre><code>&gt;&gt; flowtrace('sample_data',30,'sample_output/', use_parallel=False)</code></pre>
-<p>Certain combinations of keyword arguments might cause errors--for example, using median subtraction and inverting the color simultaneously might yeild unpredictable results on color images.</p>
+</li>
+<li>Certain combinations of keyword arguments might cause errors--for example, using median subtraction and inverting the color simultaneously might yield unpredictable results on color images.</li>
+</ul>
+<p><strong>The code is performing surprisingly slowly</strong>. </p>
+<ul>
+<li>If the code seems to be reading very slowly, try using Fiji or ImageJ to open the image sequence as a stack, convert to 8-bit tif (or RGB if using color) and then re-save all the files Even if the raw data is supposedly .tif, sometimes the encoding is funny and so scipy struggles to read the files.</li>
+</ul>
+<p><strong>Attempts to read or write files fail to find the appropriate directory</strong> (Windows only)</p>
+<ul>
+<li>Make sure you are using the correct format for filepaths on Windows. Instead of <code>Users/John/pics</code> use <code>Users//John//pics</code> or <code>Users\John\pics</code></li>
+</ul>
 <h2 id="future">Future</h2>
 <p>Bug reports and pull requests are encouraged <a href="https://github.com/williamgilpin/flowtrace_python">through GitHub</a></p>
 <script>

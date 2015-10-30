@@ -1,6 +1,6 @@
-# flowtrace for ImageJ
+# flowtrace for Fiji and ImageJ
 
-Implementation of the flowtrace tool as a macro for ImageJ / Fiji. Please make sure that you are running the latest version of [Fiji](http://fiji.sc/Fiji) or [ImageJ](http://imagej.nih.gov/ij/).
+Implementation of the flowtrace tool as a macro for Fiji / ImageJ. Please make sure that you are running the latest version of [Fiji](http://fiji.sc/Fiji) or [ImageJ](http://imagej.nih.gov/ij/).
 
 This has been tested in ImageJ32, ImageJ64, and Fiji.
 
@@ -43,9 +43,27 @@ The remaining options are described in greater detail below. Click `OK` to conti
 Now follow the prompt to choose a directory into which to save the output images. Click `OK` to run the tool.
 
 
-## Installing as a permanent macro
+## Permanent Installation
 
-If you find yourself using flowtrace on a regular basis, you may want to install it as a permanent macro in ImageJ or Fiji's plugins menu. The easiest way to do this is to manually drag the file into the folder `ImageJ/plugins` or `Fiji/Plugins` (located in the installation directory of Fiji or ImageJ---on OSX you may need to go to `Applications/Fiji`, right-click the icon, and select "Show package contents"). Restart Fiji or ImageJ after adding the file to that folder.
+If you find yourself using flowtrace on a regular basis, you may want to install it as a permanent macro in Fiji or ImageJ's plugins menu. 
+
+**In ImageJ:** 
++ Manually drag `flowtrace.ijm` into the folder `ImageJ/macros` (located in the installation directory of ImageJ), 
++ Restart ImageJ.
+
+**In Fiji on OSX:** 
++ Go to `Applications/Fiji`, right-click the icon, and select "Show package contents"). 
++ Rename the file `flowtrace.ijm` to `flowtrace_.ijm` (it needs to have a name containing an underscore because of the way that Fiji checks for packages). 
++ Place `flowtrace_.ijm` into `Applications/Fiji`
++ Open Fiji and go to Plugins > Install Plugin, and then select `flowtrace_.ijm` from the file list when prompted. 
++ Restart Fiji.
+
+**In Fiji on Windows:** 
++ Find your installation directory, it is likely somewhere like `Program Files (x86)/Fiji.app`
++ Rename the file `flowtrace.ijm` to `flowtrace_.ijm` (it needs to have a name containing an underscore because of the way that Fiji checks for packages). 
++ Place `flowtrace_.ijm` into the installation directory.
++ Open Fiji and go to Plugins > Install Plugin, and then select `flowtrace_.ijm` from the file list when prompted. 
++ Restart Fiji.  
 
 
 ## Options
@@ -83,11 +101,11 @@ When flowtrace is run, you are presented with the following options:
 
 ## Debugging
 
-### "Color Frames" option fails with message `Unrecognized Array function` and `rvals = Array.<getSequence>(nmerge);`
+**"Color Frames" option fails** 
++ If the output log says `Unrecognized Array function` and `rvals = Array.<getSequence>(nmerge);` then you need to update to the latest version of Fiji or ImageJ
 
 <img src="screenshots/macro_error.png" width="50%" />
 
-Please make sure that you are running the latest version of Fiji or ImageJ.
 
 ## Future
 

@@ -6,16 +6,16 @@
 
         <title>flowtrace</title>
 
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/highlight.dark.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/main.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="http://williamgilpin.github.io/flowtrace_docs/">
                 flowtrace
                 <small class="hidden-xs hidden-sm">
                     A simple tool for visualizing fluid flows
@@ -30,8 +30,8 @@
 
                 
                 <section id="content" class="col-sm-12">
-                    <h1 id="flowtrace-for-imagej">flowtrace for ImageJ</h1>
-<p>Implementation of the flowtrace tool as a macro for ImageJ / Fiji. Please make sure that you are running the latest version of <a href="http://fiji.sc/Fiji">Fiji</a> or <a href="http://imagej.nih.gov/ij/">ImageJ</a>.</p>
+                    <h1 id="flowtrace-for-fiji-and-imagej">flowtrace for Fiji and ImageJ</h1>
+<p>Implementation of the flowtrace tool as a macro for Fiji / ImageJ. Please make sure that you are running the latest version of <a href="http://fiji.sc/Fiji">Fiji</a> or <a href="http://imagej.nih.gov/ij/">ImageJ</a>.</p>
 <p>This has been tested in ImageJ32, ImageJ64, and Fiji.</p>
 <p>William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015</p>
 <h2 id="installation">Installation</h2>
@@ -53,8 +53,29 @@
 <p>For &quot;Number of frames to merge,&quot; select the number of frames that should be used to make each pathline. The larger this number, the longer the resulting pathlines (for best performance, this should be as large as possible while still smaller than the number of frames over which the unsteady flow noticeably changes). </p>
 <p>The remaining options are described in greater detail below. Click <code>OK</code> to continue. </p>
 <p>Now follow the prompt to choose a directory into which to save the output images. Click <code>OK</code> to run the tool.</p>
-<h2 id="installing-as-a-permanent-macro">Installing as a permanent macro</h2>
-<p>If you find yourself using flowtrace on a regular basis, you may want to install it as a permanent macro in ImageJ or Fiji's plugins menu. The easiest way to do this is to manually drag the file into the folder <code>ImageJ/plugins</code> or <code>Fiji/Plugins</code> (located in the installation directory of Fiji or ImageJ---on OSX you may need to go to <code>Applications/Fiji</code>, right-click the icon, and select &quot;Show package contents&quot;). Restart Fiji or ImageJ after adding the file to that folder.</p>
+<h2 id="permanent-installation">Permanent Installation</h2>
+<p>If you find yourself using flowtrace on a regular basis, you may want to install it as a permanent macro in Fiji or ImageJ's plugins menu. </p>
+<p><strong>In ImageJ:</strong> </p>
+<ul>
+<li>Manually drag <code>flowtrace.ijm</code> into the folder <code>ImageJ/macros</code> (located in the installation directory of ImageJ), </li>
+<li>Restart ImageJ.</li>
+</ul>
+<p><strong>In Fiji on OSX:</strong> </p>
+<ul>
+<li>Go to <code>Applications/Fiji</code>, right-click the icon, and select &quot;Show package contents&quot;). </li>
+<li>Rename the file <code>flowtrace.ijm</code> to <code>flowtrace_.ijm</code> (it needs to have a name containing an underscore because of the way that Fiji checks for packages). </li>
+<li>Place <code>flowtrace_.ijm</code> into <code>Applications/Fiji</code></li>
+<li>Open Fiji and go to Plugins &gt; Install Plugin, and then select <code>flowtrace_.ijm</code> from the file list when prompted. </li>
+<li>Restart Fiji.</li>
+</ul>
+<p><strong>In Fiji on Windows:</strong> </p>
+<ul>
+<li>Find your installation directory, it is likely somewhere like <code>Program Files (x86)/Fiji.app</code></li>
+<li>Rename the file <code>flowtrace.ijm</code> to <code>flowtrace_.ijm</code> (it needs to have a name containing an underscore because of the way that Fiji checks for packages). </li>
+<li>Place <code>flowtrace_.ijm</code> into the installation directory.</li>
+<li>Open Fiji and go to Plugins &gt; Install Plugin, and then select <code>flowtrace_.ijm</code> from the file list when prompted. </li>
+<li>Restart Fiji.  </li>
+</ul>
 <h2 id="options">Options</h2>
 <p>When flowtrace is run, you are presented with the following options:</p>
 <img src="screenshots/options.png" width="50%" />
@@ -100,9 +121,11 @@
 </li>
 </ul>
 <h2 id="debugging">Debugging</h2>
-<h3 id="quotcolor-framesquot-option-fails-with-message">&quot;Color Frames&quot; option fails with message <code>Unrecognized Array function</code> and <code>rvals = Array.&lt;getSequence&gt;(nmerge);</code></h3>
+<p><strong>&quot;Color Frames&quot; option fails</strong> </p>
+<ul>
+<li>If the output log says <code>Unrecognized Array function</code> and <code>rvals = Array.&lt;getSequence&gt;(nmerge);</code> then you need to update to the latest version of Fiji or ImageJ</li>
+</ul>
 <img src="screenshots/macro_error.png" width="50%" />
-<p>Please make sure that you are running the latest version of Fiji or ImageJ.</p>
 <h2 id="future">Future</h2>
 <!-- + Subtract first frame of each series
  -->
