@@ -1,3 +1,8 @@
+
+<iframe src="https://player.vimeo.com/video/144166179?title=0&byline=0&portrait=0" width="500" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+
+<sub>The feeding current of *Stentor sp.*, collected from a pond. The flow captures many large particles, but many small, swimming algae and protists are able to escape the current. Video shown at 8x true speed.</sub>
+
 # flowtrace
 
 A simple tool for visualizing unsteady flows
@@ -11,11 +16,6 @@ Flowtrace is currently implemented in Python, MATLAB, and ImageJ, please choose 
 The [Video Gallery](gallery.html) showcases our favorite videos generated using flowtrace.
 
 William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
-
-<iframe src="https://player.vimeo.com/video/144072652?title=0&byline=0" width="300" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-<sub>The result of running Flowtrace with a 333 ms projection window on video of swarming insects. The original video of midges is taken from [Attanasi et al, PLoS Comp Bio, July 2014](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003697)</sub>
-
 
 
 
