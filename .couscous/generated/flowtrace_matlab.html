@@ -6,16 +6,16 @@
 
         <title>flowtrace</title>
 
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/highlight.dark.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/main.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="http://williamgilpin.github.io/flowtrace_docs/">
                 flowtrace
                 <small class="hidden-xs hidden-sm">
                     A simple tool for visualizing fluid flows
@@ -35,7 +35,7 @@
 <p>This code has been tested on R2013b and later. It has no special dependencies on particular toolboxes. Future versions might require the Image Processing Toolbox</p>
 <p>William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015</p>
 <h2 id="installation">Installation</h2>
-<p>Use your browser to download flowtrace for MATLAB from <a href="https://github.com/williamgilpin/flowtrace_matlab">the host repository on GitHub</a> and put it somehwere on your MATLAB path. On OSX/Linux, you can initiate the download from the terminal using</p>
+<p>Use your browser to download flowtrace for MATLAB from <a href="https://github.com/williamgilpin/flowtrace_matlab">the host repository on GitHub</a> and put it somewhere on your MATLAB path (Direct download link <a href="https://github.com/williamgilpin/flowtrace_matlab/archive/master.zip">here</a>). On OSX/Linux, you can initiate the download from the terminal using</p>
 <pre><code>curl -OS https://github.com/williamgilpin/flowtrace_matlab/archive/master.zip</code></pre>
 <p>Or, using git</p>
 <pre><code>git clone https://github.com/williamgilpin/flowtrace_matlab.git</code></pre>
@@ -67,8 +67,9 @@ but we'll call it <code>params</code> here.</p>
 <p>For each set of frames being merged, apply an intensity gradient along the pathlines </p>
 <pre><code>params.fade_tails=false</code></pre>
 <h2 id="debugging">Debugging</h2>
+<p>Flowtrace uses <code>nargin</code> to set defaults. Make sure that <code>params</code> is defined as a <code>struct()</code>if you choose to pass it to <code>flowtrace()</code>, even if none of its fields are defined. If you want to use all default parameters, do not pass any object to <code>flowtrace()</code> in the fourth input position.</p>
 <h2 id="future">Future</h2>
-<p>Bug reports and pull requests are encouraged.</p>
+<p>Bug reports and pull requests are encouraged through <a href="https://github.com/williamgilpin/flowtrace_matlab">GitHub</a>.</p>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

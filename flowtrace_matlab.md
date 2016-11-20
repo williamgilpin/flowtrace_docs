@@ -8,7 +8,7 @@ William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
 
 ## Installation
 
-Use your browser to download flowtrace for MATLAB from [the host repository on GitHub](https://github.com/williamgilpin/flowtrace_matlab) and put it somehwere on your MATLAB path. On OSX/Linux, you can initiate the download from the terminal using
+Use your browser to download flowtrace for MATLAB from [the host repository on GitHub](https://github.com/williamgilpin/flowtrace_matlab) and put it somewhere on your MATLAB path (Direct download link [here](https://github.com/williamgilpin/flowtrace_matlab/archive/master.zip)). On OSX/Linux, you can initiate the download from the terminal using
 
 	curl -OS https://github.com/williamgilpin/flowtrace_matlab/archive/master.zip
 
@@ -69,11 +69,11 @@ For each set of frames being merged, apply an intensity gradient along the pathl
 
 ## Debugging
 
-
+Flowtrace uses `nargin` to set defaults. Make sure that `params` is defined as a `struct()`if you choose to pass it to `flowtrace()`, even if none of its fields are defined. If you want to use all default parameters, do not pass any object to `flowtrace()` in the fourth input position.
 
 ## Future
 
-Bug reports and pull requests are encouraged.
+Bug reports and pull requests are encouraged through [GitHub](https://github.com/williamgilpin/flowtrace_matlab).
 
 
 <script>

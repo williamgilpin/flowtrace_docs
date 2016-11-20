@@ -6,16 +6,16 @@
 
         <title>flowtrace</title>
 
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/highlight.dark.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://williamgilpin.github.io/flowtrace_docs/css/main.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="http://williamgilpin.github.io/flowtrace_docs/">
                 flowtrace
                 <small class="hidden-xs hidden-sm">
                     A simple tool for visualizing fluid flows
@@ -34,7 +34,7 @@
 <p>Implementation of the flowtrace tool as a module for Python 2 / Python 3</p>
 <p>William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015</p>
 <h2 id="installation">Installation</h2>
-<p>Use your browser to download flowtrace for Python from <a href="https://github.com/williamgilpin/flowtrace_python">the host repository on GitHub</a>. On OSX/Linux, you can initiate the download from the terminal using</p>
+<p>Use your browser to download flowtrace for Python from <a href="https://github.com/williamgilpin/flowtrace_python">the host repository on GitHub</a> (Direct download link <a href="https://github.com/williamgilpin/flowtrace_python/archive/master.zip">here</a>). On OSX/Linux, you can initiate the download from the terminal using</p>
 <pre><code>curl -OS https://github.com/williamgilpin/flowtrace_python/archive/master.zip</code></pre>
 <p>Or, using git</p>
 <pre><code>git clone https://github.com/williamgilpin/flowtrace_python.git</code></pre>
@@ -73,13 +73,17 @@
 <li>The number of images to skip when building each substack</li>
 </ul>
 <h3 id="keywords">Keywords</h3>
+<p><strong>invert_color : bool</strong></p>
+<ul>
+<li>Set to &quot;True&quot; for dark objects moving against a white background</li>
+</ul>
 <p><strong>take_diff : bool</strong></p>
 <ul>
-<li>whether to take the difference of consecutive frames</li>
+<li>Whether to take the difference of consecutive frames</li>
 </ul>
 <p><strong>diff_order : int</strong></p>
 <ul>
-<li>the order of the difference in frames when take_diff is used</li>
+<li>The order of the difference in frames when take_diff is used</li>
 </ul>
 <p><strong>subtract_median : bool</strong></p>
 <ul>

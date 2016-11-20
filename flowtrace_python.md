@@ -6,7 +6,7 @@ William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
 
 ## Installation
 
-Use your browser to download flowtrace for Python from [the host repository on GitHub](https://github.com/williamgilpin/flowtrace_python). On OSX/Linux, you can initiate the download from the terminal using
+Use your browser to download flowtrace for Python from [the host repository on GitHub](https://github.com/williamgilpin/flowtrace_python) (Direct download link [here](https://github.com/williamgilpin/flowtrace_python/archive/master.zip)). On OSX/Linux, you can initiate the download from the terminal using
 
 	curl -OS https://github.com/williamgilpin/flowtrace_python/archive/master.zip
 
@@ -60,11 +60,14 @@ Adjust the number of cores that the code uses to multithread
 
 ### Keywords
 
+**invert_color : bool**
++ Set to "True" for dark objects moving against a white background
+
 **take_diff : bool**
-+ whether to take the difference of consecutive frames
++ Whether to take the difference of consecutive frames
     
 **diff_order : int**
-+ the order of the difference in frames when take_diff is used
++ The order of the difference in frames when take_diff is used
 
 **subtract_median : bool**
 + For each substack, subtract the median before taking the z projection

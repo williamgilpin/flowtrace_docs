@@ -8,7 +8,7 @@ William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
 
 ## Installation
 
-Download the code and sample images from [the GitHub repository](https://github.com/williamgilpin/flowtrace_imagej)
+Download the code and sample images as a zip file from [the GitHub repository](https://github.com/williamgilpin/flowtrace_imagej) (A direct download link is [here](https://github.com/williamgilpin/flowtrace_imagej/archive/master.zip))
 
 Alternatively, on OSX/Linux you can initiate the download from the terminal using
 
@@ -101,6 +101,8 @@ When flowtrace is run, you are presented with the following options:
 
 ## Debugging
 
+For optional arguments (Subtract Median. Pairwise Difference, etc.), unpredictable things can happen if multiple are enabled simultaneously. For example, choosing "Invert Projection" and "Subtract Median" simultaneously will result in blank files being written to output because the algorithm is trying to take the median of a stack that has been inverted already. Also
+
 **"Color Frames" option fails** 
 + If the output log says `Unrecognized Array function` and `rvals = Array.<getSequence>(nmerge);` then you need to update to the latest version of Fiji or ImageJ
 
@@ -109,8 +111,7 @@ When flowtrace is run, you are presented with the following options:
 
 ## Future
 
-<!-- + Subtract first frame of each series
- -->
+
 Bug reports and pull requests are encouraged [through GitHub](https://github.com/williamgilpin/flowtrace_imagej)
 
 <script>
