@@ -20,9 +20,16 @@ Flowtrace is currently implemented in Python, MATLAB, and Fiji/ImageJ, please ch
 + [Python](flowtrace_python.html)
 + [MATLAB](flowtrace_matlab.html)
 
-The [Video Gallery](gallery.html) showcases our favorite videos generated using flowtrace.
+The [Video Gallery](gallery.html) shows our favorite videos generated using flowtrace.
+
+
+
+
+
+
 
 <sub>William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015-2017. Please consider reading and citing [our bioRxiv preprint](https://doi.org/10.1101/086140) if you find this tool useful.</sub>
+
 
 
 <script>

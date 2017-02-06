@@ -1,4 +1,4 @@
-# flowtrace for Python
+# Flowtrace for Python
 
 Implementation of the flowtrace tool as a module for Python 2 / Python 3
 
@@ -8,33 +8,33 @@ William Gilpin, Vivek N. Prakash, and Manu Prakash.
 
 Use your browser to download flowtrace for Python from [the host repository on GitHub](https://github.com/williamgilpin/flowtrace_python) (Direct download link [here](https://github.com/williamgilpin/flowtrace_python/archive/master.zip)). On OSX/Linux, you can initiate the download from the terminal using
 
-	curl -OS https://github.com/williamgilpin/flowtrace_python/archive/master.zip
+	$ curl -OS https://github.com/williamgilpin/flowtrace_python/archive/master.zip
 
 Or, using git
 
-	git clone https://github.com/williamgilpin/flowtrace_python.git
+	$ git clone https://github.com/williamgilpin/flowtrace_python.git
 
 ## Running flowtrace
 
 Somewhere in your script, include the import statement
 
-	>> from flowtrace import flowtrace
+	$ from flowtrace import flowtrace
 
 Run using all defaults and a 30 frame projection window
 
-	>> flowtrace('sample_data',30,'sample_output/')
+	$ flowtrace('sample_data',30,'sample_output/')
 
 Subtract the median of every 30 frames to remove slow-moving background objects
 
-	>> flowtrace('sample_data',30,'sample_output/',subtract_median=True)
+	$ flowtrace('sample_data',30,'sample_output/',subtract_median=True)
 
 Color the output streamlines to denote the direction of time
 
-	>> flowtrace('sample_data',30,'sample_output/',color_series=True)
+	$ flowtrace('sample_data',30,'sample_output/',color_series=True)
 
 Adjust the number of cores that the code uses to multithread
 
-	>> flowtrace('sample_data',30,'sample_output/',max_cores=2)
+	$ flowtrace('sample_data',30,'sample_output/',max_cores=2)
 
 
 
@@ -87,7 +87,7 @@ Adjust the number of cores that the code uses to multithread
 **The code just won't run**
 + If you are consistently getting errors on your system, try disabling parallization with the setting `use_parallel=False`. Multithreading in Python can be configuration-specific, and so flowtrace will not succeed in multithreading if Python's multiprocessing library is not working.
 
-	>> flowtrace('sample_data',30,'sample_output/', use_parallel=False)
+	$ flowtrace('sample_data',30,'sample_output/', use_parallel=False)
 
 + Certain combinations of keyword arguments might cause errors--for example, using median subtraction and inverting the color simultaneously might yield unpredictable results on color images.
 

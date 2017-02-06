@@ -1,0 +1,19 @@
+theme: minima
+
+name: flowtrace
+description: A simple tool for visualizing fluid flows
+
+title: flowtrace
+subTitle: A simple tool for visualizing fluid flows
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "page"
+      date: "2017-02-23T10:20:00Z"
+
+# Base URL of the published website
+# baseurl: http://williamgilpin.github.io/flowtrace_docs
+# url: flowtrace.org

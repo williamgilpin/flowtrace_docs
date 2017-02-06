@@ -1,4 +1,4 @@
-# flowtrace for Fiji and ImageJ
+# Flowtrace for ImageJ / Fiji
 
 Implementation of the flowtrace tool as a macro for Fiji / ImageJ. Please make sure that you are running the latest version of [Fiji](http://fiji.sc/Fiji) or [ImageJ](http://imagej.nih.gov/ij/).
 
