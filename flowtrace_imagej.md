@@ -4,7 +4,7 @@ Implementation of the flowtrace tool as a macro for Fiji / ImageJ. Please make s
 
 This has been tested in ImageJ32, ImageJ64, and Fiji.
 
-William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
+William Gilpin, Vivek N. Prakash, and Manu Prakash.
 
 ## Installation
 
@@ -52,17 +52,27 @@ If you find yourself using flowtrace on a regular basis, you may want to install
 + Restart ImageJ.
 
 **In Fiji on OSX:** 
+
 + Go to `Applications/Fiji`, right-click the icon, and select "Show package contents"). 
+
 + Rename the file `flowtrace.ijm` to `flowtrace_.ijm` (it needs to have a name containing an underscore because of the way that Fiji checks for packages). 
+
 + Place `flowtrace_.ijm` into `Applications/Fiji`
+
 + Open Fiji and go to Plugins > Install Plugin, and then select `flowtrace_.ijm` from the file list when prompted. 
+
 + Restart Fiji.
 
 **In Fiji on Windows:** 
+
 + Find your installation directory, it is likely somewhere like `Program Files (x86)/Fiji.app`
+
 + Rename the file `flowtrace.ijm` to `flowtrace_.ijm` (it needs to have a name containing an underscore because of the way that Fiji checks for packages). 
+
 + Place `flowtrace_.ijm` into the installation directory.
+
 + Open Fiji and go to Plugins > Install Plugin, and then select `flowtrace_.ijm` from the file list when prompted. 
+
 + Restart Fiji.  
 
 
@@ -101,7 +111,7 @@ When flowtrace is run, you are presented with the following options:
 
 ## Debugging
 
-For optional arguments (Subtract Median. Pairwise Difference, etc.), unpredictable things can happen if multiple are enabled simultaneously. For example, choosing "Invert Projection" and "Subtract Median" simultaneously will result in blank files being written to output because the algorithm is trying to take the median of a stack that has been inverted already. Also
+For optional arguments (Subtract Median. Pairwise Difference, etc.), unpredictable things can happen if multiple are enabled simultaneously. For example, choosing "Invert Projection" and "Subtract Median" simultaneously will result in blank files being written to output because the algorithm is trying to take the median of a stack that has been inverted already.
 
 **"Color Frames" option fails** 
 + If the output log says `Unrecognized Array function` and `rvals = Array.<getSequence>(nmerge);` then you need to update to the latest version of Fiji or ImageJ

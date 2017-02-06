@@ -4,7 +4,7 @@ Implementation of the flowtrace tool as a function file in MATLAB.
 
 This code has been tested on R2013b and later. It has no special dependencies on particular toolboxes. Future versions might require the Image Processing Toolbox
 
-William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
+William Gilpin, Vivek N. Prakash, and Manu Prakash.
 
 ## Installation
 
@@ -20,26 +20,26 @@ Or, using git
 
 You can download the test image files for flowtrace and place them in a folder "test_images" somewhere on your MATLAB path. See if the tool is working by running it on the test data included in the file
 
-    >> test_script
+  >> test_script
 
 You should see fresh image files in the directory `sample_output`
 
 In general, the command to run flowtrace is
 
-   	>> flowtrace('some/input/data',30,'some/output/older/')
+  >> flowtrace('some/input/data',30,'some/output/older/')
 
 In order to use custom parameters, pass a struct() to the function
 
-    >> params=struct()
-    >> params.subtract_median=true
-    >> flowtrace('sample_data',30,'sample_output',params)
+  >> params=struct()
+  >> params.subtract_median=true
+  >> flowtrace('sample_data',30,'sample_output',params)
 
 ## Options
 
 Options are passed as fields in a `struct()`. This struct can be called anything,
 but we'll call it `params` here.
     
-    >> params = struct()
+  >> params = struct()
 
 The various options are:
 

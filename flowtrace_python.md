@@ -2,7 +2,7 @@
 
 Implementation of the flowtrace tool as a module for Python 2 / Python 3
 
-William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015
+William Gilpin, Vivek N. Prakash, and Manu Prakash.
 
 ## Installation
 
@@ -87,7 +87,7 @@ Adjust the number of cores that the code uses to multithread
 **The code just won't run**
 + If you are consistently getting errors on your system, try disabling parallization with the setting `use_parallel=False`. Multithreading in Python can be configuration-specific, and so flowtrace will not succeed in multithreading if Python's multiprocessing library is not working.
 
-		>> flowtrace('sample_data',30,'sample_output/', use_parallel=False)
+	>> flowtrace('sample_data',30,'sample_output/', use_parallel=False)
 
 + Certain combinations of keyword arguments might cause errors--for example, using median subtraction and inverting the color simultaneously might yield unpredictable results on color images.
 
