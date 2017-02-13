@@ -25,6 +25,11 @@ Example applications of Flowtrace to various data sets. If you would like to sha
 <sub>The result of running Flowtrace with a 333 ms projection window on video of swarming insects. The original video of midges is taken from [Attanasi et al, PLoS Comp Bio, July 2014](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003697)</sub>
 <br><br>
 
+<iframe src="https://player.vimeo.com/video/203738517?title=0&byline=0&portrait=0" width="667" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+<sub>A stagnation point in the flow of cerebrospinal fluid in a mouse brain ventricle. Movie shown in real time, projections correspond to 0.6s traces with median subtraction applied. Video taken from Supplementary Video 2 of [Faubel et al. Science 2016](http://science.sciencemag.org/content/353/6295/176)</sub>
+<br><br>
+
+
 
 <iframe src="https://player.vimeo.com/video/144419103?title=0&byline=0&portrait=0" width="400" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <sub>A swarm of army ants in the rainforest, processed using flowtrace with a 1 s projection window (both videos shown at 2x speed). Original video of ants taken by Manu Prakash. Flowtrace can be obtained from flowtrace.org</sub>
