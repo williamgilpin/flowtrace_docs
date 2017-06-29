@@ -26,13 +26,17 @@ You should see fresh image files in the directory `sample_output`
 
 In general, the command to run flowtrace is
 
-    $ flowtrace('some/input/data',30,'some/output/older/')
+    $ flowtrace('some/input/data',30,'some/output/folder/')
 
-In order to use custom parameters, pass a struct() to the function
+Instead of an input directory of images, the first argument can be the path to a video file
+
+    $ flowtrace('some/folder/some_movie.mp4',30,'some/output/folder/')
+
+In order to use custom parameters, pass a struct() to the function after the first three arguments
 
     $ params=struct()
     $ params.subtract_median=true
-    $ flowtrace('sample_data',30,'sample_output',params)
+    $ flowtrace(sample_data/sample_data_tif',30,'sample_output/sample_output_tif',params)
 
 ## Options
 
@@ -69,7 +73,9 @@ For each set of frames being merged, apply an intensity gradient along the pathl
 
 ## Debugging
 
-Flowtrace uses `nargin` to set defaults. Make sure that `params` is defined as a `struct()`if you choose to pass it to `flowtrace()`, even if none of its fields are defined. If you want to use all default parameters, do not pass any object to `flowtrace()` in the fourth input position.
+flowtrace uses `nargin` to set defaults. Make sure that `params` is defined as a `struct()`if you choose to pass it to `flowtrace()`, even if none of its fields are defined. If you want to use all default parameters, do not pass any object to `flowtrace()` in the fourth input position.
+
+If you are having trouble getting flowtrace to work with your movie files, try splitting the movie into frames using ImageJ, and then saving the sequence of frames to a new directory. We recommend [Qingzong Tseng's ImageJ plugin](https://sites.google.com/site/qingzongtseng/save-as-movie). This plugin can also be used to convert the directory of images produced by flowtrace into a video file.
 
 ## Future
 
