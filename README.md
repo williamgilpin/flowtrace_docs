@@ -13,7 +13,7 @@
 
 A simple tool for visualizing unsteady flows.
 
-#### Installation
+**Installation**
 
 Flowtrace is currently implemented in Python, MATLAB, and Fiji/ImageJ, please choose your preferred version below for installation and usage instructions
 
@@ -21,15 +21,15 @@ Flowtrace is currently implemented in Python, MATLAB, and Fiji/ImageJ, please ch
 + [Python](flowtrace_python.html)
 + [MATLAB](flowtrace_matlab.html)
 
-#### Gallery
+**Gallery**
 
 The [Video Gallery](gallery.html) shows our favorite videos generated using flowtrace.
 
-#### Publications
+**Publications**
 
 This tool was created by William Gilpin, Vivek N. Prakash, and Manu Prakash, 2015-2017. For more details and comparison to other tools (such as Finite-Time Lyapunov exponents) please see our paper in [Journal of Experimental Biology](https://doi.org/10.1101/086140).
 
-	William Gilpin, Vivek N. Prakash, Manu Prakash. "Flowtrace: simple visualization of coherent structures in biological fluid flows" Journal of Experimenta Biology, 2017.
+	William Gilpin, Vivek N. Prakash, Manu Prakash. "Flowtrace: simple visualization of coherent structures in biological fluid flows" Journal of Experimental Biology, 2017.
 
 If you use the tool in published work, please consider citing the above.
 
